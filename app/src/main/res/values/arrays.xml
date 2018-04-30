@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_sort_by_labels">
+        <item>@string/preference_sort_by_time_label</item>
+        <item>@string/preference_sort_by_magnitude_label</item>
+        <item>@string/preference_sort_by_location_label</item>
+    </string-array>
+    <string-array name="pref_sort_by_values">
+        <item>@string/preference_sort_by_time_value</item>
+        <item>@string/preference_sort_by_magnitude_value</item>
+        <item>@string/preference_sort_by_location_value</item>
+    </string-array>
+</resources>

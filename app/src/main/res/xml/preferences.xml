@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preference_category_search_title">
+        <CheckBoxPreference
+            android:defaultValue="@bool/preference_save_location_default"
+            android:key="@string/preference_save_location_key"
+            android:title="@string/preference_save_location_title" />
+
+        <EditTextPreference
+            android:defaultValue="@string/preference_radius_default"
+            android:inputType="numberDecimal"
+            android:key="@string/preference_radius_key"
+            android:maxLength="6"
+            android:summary="50"
+            android:selectAllOnFocus="true"
+            android:title="@string/preference_radius_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preference_category_filter_title">
+        <EditTextPreference
+            android:defaultValue="@string/preference_min_magnitude_default"
+            android:inputType="numberDecimal"
+            android:key="@string/preference_min_magnitude_key"
+            android:maxLength="3"
+            android:selectAllOnFocus="true"
+            android:summary="0.0"
+            android:title="@string/preference_min_magnitude_title" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preference_category_sort_title">
+        <ListPreference
+            android:defaultValue="@string/preference_sort_by_time_label"
+            android:entries="@array/pref_sort_by_labels"
+            android:entryValues="@array/pref_sort_by_values"
+            android:key="@string/preference_sort_by_key"
+            android:summary="@string/preference_sort_by_time_label"
+            android:title="@string/preference_sort_by_title" />
+        <SwitchPreference
+            android:defaultValue="@bool/preference_sort_ascending_default"
+            android:key="@string/preference_sort_ascending_key"
+            android:summaryOff="@string/preference_sort_ascending_summary_off"
+            android:summaryOn="@string/preference_sort_ascending_summary_on"
+            android:title="@string/preference_sort_ascending_title" />
+    </PreferenceCategory>
+</PreferenceScreen>
