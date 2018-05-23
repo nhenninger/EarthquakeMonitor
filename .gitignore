@@ -8,3 +8,5 @@
 /build
 /captures
 .externalNativeBuild
+**/api_keys.xml
+**/google-services.json

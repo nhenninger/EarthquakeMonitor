@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_detail_feature_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:text="https://earthquake.usgs.gov" />
+
+    <TextView
+        android:id="@+id/tv_detail_feature_magnitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="6.9" />
+
+    <TextView
+        android:id="@+id/tv_detail_feature_location_offset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="0.0km N of" />
+
+    <TextView
+        android:id="@+id/tv_detail_feature_location_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Yo momma" />
+
+    <TextView
+        android:id="@+id/tv_detail_feature_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Dec 31, 1999" />
+
+    <TextView
+        android:id="@+id/tv_detail_feature_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="13:33:37" />
+
+
+    <!-- TODO: add button to show additional events in history -->
+
+    <fragment
+        android:id="@+id/map_detail_feature_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:mapType="normal"
+        app:uiTiltGestures="false" />
+</LinearLayout>

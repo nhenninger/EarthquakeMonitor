@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_earthquake_list"
+        android:id="@+id/rv_feature_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
@@ -16,7 +16,7 @@
         app:fastScrollHorizontalThumbDrawable="@drawable/fast_scroll_thumb"
         app:fastScrollVerticalTrackDrawable="@drawable/fast_scroll_track"
         app:fastScrollHorizontalTrackDrawable="@drawable/fast_scroll_track"
-        tools:listitem="@layout/list_item_earthquake" />
+        tools:listitem="@layout/list_item_feature" />
 
     <RelativeLayout
         android:id="@+id/layout_loading_list"
@@ -59,6 +59,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/material_fab_margin"
         android:src="@android:drawable/ic_menu_search"
-        app:layout_anchor="@+id/rv_earthquake_list"
+        app:layout_anchor="@+id/rv_feature_list"
         app:layout_anchorGravity="bottom|end" />
 </android.support.design.widget.CoordinatorLayout>

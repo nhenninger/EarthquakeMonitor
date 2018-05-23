@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tv_list_earthquake_magnitude"
+            android:id="@+id/tv_list_feature_magnitude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/magnitude_circle"
@@ -24,12 +24,12 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/tv_list_earthquake_location_primary"
+            app:layout_constraintRight_toLeftOf="@+id/tv_list_feature_location_primary"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="6.9" />
 
         <TextView
-            android:id="@+id/tv_list_earthquake_location_offset"
+            android:id="@+id/tv_list_feature_location_offset"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -38,7 +38,7 @@
             android:textAllCaps="true"
             android:textColor="@color/textColorEarthquakeOffset"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/tv_list_earthquake_location_primary"
+            app:layout_constraintBottom_toTopOf="@+id/tv_list_feature_location_primary"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,7 +47,7 @@
             tools:text="2.718km N of" />
 
         <TextView
-            android:id="@+id/tv_list_earthquake_location_primary"
+            android:id="@+id/tv_list_feature_location_primary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -58,26 +58,26 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_list_earthquake_location_offset"
+            app:layout_constraintTop_toBottomOf="@+id/tv_list_feature_location_offset"
             app:layout_constraintWidth_percent="0.50"
             tools:text="@tools:sample/lorem/random" />
 
         <TextView
-            android:id="@+id/tv_list_earthquake_date"
+            android:id="@+id/tv_list_feature_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:gravity="center_vertical|end"
             android:textColor="@color/textColorEarthquakeOffset"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_list_earthquake_time"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_list_feature_time"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="Dec 31, 1999" />
 
         <TextView
-            android:id="@+id/tv_list_earthquake_time"
+            android:id="@+id/tv_list_feature_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -86,7 +86,7 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_list_earthquake_date"
+            app:layout_constraintTop_toTopOf="@+id/tv_list_feature_date"
             tools:text="13:33:37" />
     </android.support.constraint.ConstraintLayout>
 

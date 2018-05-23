@@ -14,8 +14,8 @@
     <string name="preference_category_sort_title">Sorting</string>
     <string name="preference_sort_ascending_title">Sort ascending</string>
     <string name="preference_sort_ascending_key" translatable="false">preference_sort_ascending_key</string>
-    <string name="preference_sort_ascending_summary_on"><![CDATA[A->Z]]></string>
-    <string name="preference_sort_ascending_summary_off"><![CDATA[Z->A]]></string>
+    <string name="preference_sort_ascending_summary_on"><![CDATA[A->Z / 0->9]]></string>
+    <string name="preference_sort_ascending_summary_off"><![CDATA[Z->A / 9->0]]></string>
     <string name="preference_sort_by_title">Sort by:</string>
     <string name="preference_sort_by_key" translatable="false">preference_sort_by_key</string>
     <string name="preference_sort_by_default" translatable="false">@string/preference_sort_by_time_value</string>

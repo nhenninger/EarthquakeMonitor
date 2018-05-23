@@ -9,6 +9,7 @@
         <EditTextPreference
             android:defaultValue="@string/preference_radius_default"
             android:inputType="numberDecimal"
+            android:id="@+id/etp_search_radius"
             android:key="@string/preference_radius_key"
             android:maxLength="6"
             android:summary="50"
@@ -18,6 +19,7 @@
     <PreferenceCategory android:title="@string/preference_category_filter_title">
         <EditTextPreference
             android:defaultValue="@string/preference_min_magnitude_default"
+            android:id="@+id/etp_minimum_magnitude"
             android:inputType="numberDecimal"
             android:key="@string/preference_min_magnitude_key"
             android:maxLength="3"
@@ -27,7 +29,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/preference_category_sort_title">
         <ListPreference
-            android:defaultValue="@string/preference_sort_by_time_label"
+            android:defaultValue="@string/preference_sort_by_time_value"
             android:entries="@array/pref_sort_by_labels"
             android:entryValues="@array/pref_sort_by_values"
             android:key="@string/preference_sort_by_key"

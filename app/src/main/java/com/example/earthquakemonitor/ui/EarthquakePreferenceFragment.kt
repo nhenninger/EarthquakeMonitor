@@ -38,21 +38,21 @@ class EarthquakePreferenceFragment : PreferenceFragmentCompat(),
     }
 
     override fun onResume() {
+        super.onResume()
         PreferenceManager
             .getDefaultSharedPreferences(activity)
             .registerOnSharedPreferenceChangeListener(this)
-        super.onResume()
     }
 
     override fun onPause() {
+        super.onPause()
         PreferenceManager
             .getDefaultSharedPreferences(activity)
             .unregisterOnSharedPreferenceChangeListener(this)
-        super.onPause()
     }
 
-    override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
-        return if (isValidInput(preference, newValue)) {
+    override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean =
+        if (isValidInput(preference, newValue)) {
             true
         } else {
             Toast
@@ -60,10 +60,9 @@ class EarthquakePreferenceFragment : PreferenceFragmentCompat(),
                 .show()
             false
         }
-    }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        // Only way to automatically update DialogPreferences.
+        // Only way to automatically update DialogPreference summaries.
         // TwoStatePreferences (e.g. CheckboxPreference) will update themselves.
         setPrefSummary(findPreference(key))
     }

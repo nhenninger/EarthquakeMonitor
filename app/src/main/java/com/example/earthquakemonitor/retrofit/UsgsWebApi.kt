@@ -2,10 +2,7 @@ package com.example.earthquakemonitor.retrofit
 
 import com.example.earthquakemonitor.model.UsgsGeoJson
 import retrofit2.Call
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -15,42 +12,16 @@ import retrofit2.http.Query
  * nathanhenninger@u.boisestate.edu
  */
 interface UsgsWebApi {
-    companion object {
-        private const val BASE_URL = "https://earthquake.usgs.gov/"
-        private const val FEED_SUMMARY = "earthquakes/feed/v1.0/summary/"
-        // International Federation of Digital Seismograph Networks
-        private const val FDSN_WEB_SERVICE = "fdsnws/event/1/"
-
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-
-    enum class Magnitude(val value: String) {
-        M_ALL("all_"),
-        M_ONE_POINT_ZERO_PLUS("1.0_"),
-        M_TWO_POINT_FIVE_PLUS("2.5_"),
-        M_FOUR_POINT_FIVE_PLUS("4.5_"),
-        M_SIGNIFICANT("significant_")
-    }
-
-    enum class Time(val value: String) {
-        PAST_HOUR("hour.geojson"),
-        PAST_DAY("day.geojson"),
-        PAST_WEEK("week.geojson"),
-        PAST_MONTH("month.geojson")
-    }
-
-
-    @GET("$FEED_SUMMARY{significance}{time}")
+    @GET("earthquakes/feed/v1.0/summary/{significance}{time}")
     fun getFeedEvents(
         @Path(value = "significance") significance: String = Magnitude.M_ALL.value,
         @Path(value = "time") time: String = Time.PAST_DAY.value
     ): Call<UsgsGeoJson>
 
-    @GET("${FDSN_WEB_SERVICE}query?format=geojson")
+    // International Federation of Digital Seismograph Networks
+    @GET("fdsnws/event/1/query?format=geojson")
     fun searchRadius(
+        // TODO: rename method
         @Query("latitude") latitude: Double,
         @Query("longitude") longitude: Double,
         @Query("maxradiuskm") radiusKm: Double,
@@ -58,15 +29,33 @@ interface UsgsWebApi {
         @Query("endtime") endtime: String? = null
     ): Call<UsgsGeoJson>
 
-    // TODO: add search by city (lat/long resolution)
+    // TODO: add searchByLatitudeLongitude by city (lat/long resolution)
     // TODO: add categories to drawer layout: past day/week/month
     // TODO: visualize data?
     // TODO: add "Did You Feel It?" interface?
-    // TODO: add click to cards to open map
-    // TODO: save data with Room.
+    // TODO: add map click listener to show historical events?
+    // TODO: fix UI for searching; add options for dates, radius, and
     // TODO: real-time, animated additions to list
     // TODO: add seismograph line
     // TODO: add pictures of location
     // TODO: add camera feeds of location
     // TODO: tab navigation
+    // TODO: Use Tor network.
+    // TODO: Make navigation controller like in GithubBrowser
+    // TODO: Room (maybe?), Espresso(probably), Glide, MPAndroidChart (maybe?), SwipeCards (maybe?), Circular ImageView (probably), Lottie
+}
+
+enum class Time(val value: String) {
+    PAST_HOUR("hour.geojson"),
+    PAST_DAY("day.geojson"),
+    PAST_WEEK("week.geojson"),
+    PAST_MONTH("month.geojson")
+}
+
+enum class Magnitude(val value: String) {
+    M_ALL("all_"),
+    M_ONE_POINT_ZERO_PLUS("1.0_"),
+    M_TWO_POINT_FIVE_PLUS("2.5_"),
+    M_FOUR_POINT_FIVE_PLUS("4.5_"),
+    M_SIGNIFICANT("significant_")
 }
